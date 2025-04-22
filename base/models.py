@@ -6,3 +6,5 @@ class Todolist(models.Model):
     description = models.TextField()
     is_completed = models.BooleanField(default=False)
     
+def __str__(self):
+    return f"Title- {self.title}"

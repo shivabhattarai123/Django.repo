@@ -75,11 +75,13 @@ def edit(request,pk):
         "task" : task
     }
     
+    
+    
+    
     return render (request, 'edit.html', context)
 
 def delete(request,pk):
     task = Todolist.objects.get(pk = pk)
-    task.save()
+    task.delete()
+    task.title = request.POST.get('title')
     return redirect('/task')
-
-
